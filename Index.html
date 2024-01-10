@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo Game</title>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+    body{
+        background-image: url(./pexels-fwstudio-129731.jpg)
+    }
+    h1{
+          font-size: 64pt;
+          font-weight: bolder;
+          text-align: center;
+          color: #050447bd;
+          font-family: 'Rubik Doodle Shadow', system-ui;
+          }
+          
+    .board{
+          margin: 10px auto;
+          border: 2px solid #000;
+          width: fit-content;
+          background-color: aliceblue;
+          }
+    .row{
+          display: flex;
+    }
+    .red{
+          background-color: #FF0000;
+    }
+    .green{
+          background-color: #009000;
+    }
+    .yellow{
+          background-color: #FFCC00;
+    }
+    .blue{
+          background-color: #66CCFF;
+    }
+    .yellow-box{
+          background-color: #FFCC00;
+          width: 250px;
+          height: 250px;
+          border: 1px solid #000;
+    }
+    .blue-box{
+      background-color: #66CCFF;
+          width: 250px;
+          height: 250px;
+          border: 1px solid #000;
+    }
+    .green-box{
+          background-color: #009000;
+          width: 250px;
+          height: 250px;
+          border: 1px solid #000;
+    }
+    .red-box{
+          background-color: #FF0000;
+          width: 250px;
+          height: 250px;
+          border: 1px solid #000;
+    }
+    .white-box{
+          background-color: #fff;
+          width: 150px;
+          height: 150px;
+          margin: 20% auto;
+          border: 1px solid #000;
+    }
+    .white-box .circle{
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          float: left;
+          margin: 16px;
+          border: 1px solid #000;
+    }
+    .cell{
+          height: 40px;
+          width: 40px;
+          border: 1px solid #000;
+          text-align: center;
+          font-family:'Courier New', Courier, monospace;
+          font-size: small;
+          font-weight: bold;
+
+    }
+    .destination{
+          border-top: 63px solid #009000;
+          border-left: 63px solid #FF0000;
+          border-right: 63px solid #FFCC00;
+          border-bottom: 63px solid #66CCFF;          
+   }
+  </style>
+</head>
+<body>
+  <h1>LUDO GAME</h1>
+
+  <div class="board">
+    <div class="row">
+      <div class="red-box">
+        <div class="white-box">
+         <div class="red circle"></div> 
+         <div class="red circle"></div> 
+         <div class="red circle"></div> 
+         <div class="red circle"></div> 
+        </div>
+      </div>
+      <div class="cell-container">
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell green"></div>
+          <div class="cell green"><br>Start</div>
+        </div>
+        <div class="row">
+          <div class="cell green"><br>Stop </div>
+          <div class="cell green"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell green"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell green"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell green"></div>
+          <div class="cell"></div>
+        </div>
+      </div>
+      <div class="green-box">
+        <div class="white-box">
+         <div class="green circle"></div> 
+         <div class="green circle"></div> 
+         <div class="green circle"></div> 
+         <div class="green circle"></div> 
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="cell-container">
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell red">Start</div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell red"></div>
+          <div class="cell red"></div>
+          <div class="cell red"></div>
+          <div class="cell red"></div>
+          <div class="cell red"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell red"> Stop</div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+      </div>
+        <div class="destination"> </div>
+        <div class="cell-container">
+          <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell yellow">Stop</div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+          </div>
+          <div class="row">
+            <div class="cell yellow"></div>
+            <div class="cell yellow"></div>
+            <div class="cell yellow"></div>
+            <div class="cell yellow"></div>
+            <div class="cell yellow"></div>
+            <div class="cell"></div>
+          </div>
+          <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell yellow"> Start</div>
+            <div class="cell"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="blue-box">
+          <div class="white-box">
+           <div class="blue circle"></div> 
+           <div class="blue circle"></div> 
+           <div class="blue circle"></div> 
+           <div class="blue circle"></div> 
+          </div>
+        </div>
+        <div class="cell-container">
+          <div class="row">
+            <div class="cell"></div>
+            <div class="cell blue"></div>
+            <div class="cell"></div>
+          </div>
+          <div class="row">
+            <div class="cell"></div>
+            <div class="cell blue"></div>
+            <div class="cell"></div>
+          </div>
+          <div class="row">
+            <div class="cell"></div>
+            <div class="cell blue"></div>
+            <div class="cell"></div>
+          </div>
+          <div class="row">
+            <div class="cell"></div>
+            <div class="cell blue"></div>
+            <div class="cell blue">Stop</div>
+          </div>
+          <div class="row">
+            <div class="cell blue">Start</div>
+            <div class="cell blue"></div>
+            <div class="cell"></div>
+          </div>
+          <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+          </div>
+        </div>
+        <div class="yellow-box">
+          <div class="white-box">
+           <div class="yellow circle"></div> 
+           <div class="yellow circle"></div> 
+           <div class="yellow circle"></div> 
+           <div class="yellow circle"></div> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
